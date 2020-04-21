@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
+// Tutorial found on:
+// https://www.techiediaries.com/angular/angular-8-7-tutorial-example-rest-api-httpclient-get-ngfor/
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -13,7 +16,7 @@ export class NewsComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    
+
     this.apiService.getNews().subscribe((data)=>{
       console.log(data);
       this.articles = data['articles'];
